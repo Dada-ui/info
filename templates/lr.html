@@ -1,0 +1,63 @@
+{% extends 'cover.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+
+    <div class="card-img-overlay py-2">
+
+      <style>
+        div.relative {
+          position: relative;
+          left: 280px;
+          top: 120px;
+        }
+        #username{
+          border-color: black;
+          border-top: hidden;
+          border-left: hidden;
+          border-right: hidden;
+        }
+        #email{
+          border-color: black;
+          border-top: hidden;
+          border-left: hidden;
+          border-right: hidden;
+        }
+        #password{
+          border-color: black;
+          border-top: hidden;
+          border-left: hidden;
+          border-right: hidden;
+        }
+      </style>
+
+      <div class="relative col-sm-6 mx-5 py-5 mb-2">
+        <div class="container form-control text-center my-5">
+          <div class="container my-3">
+            <b><h3>Please choose</b></h3>
+            <br>
+
+            <div class="row justify-content-evenly">
+              <div class="col-5">
+                <h5>
+                  Do you want to Login...?
+                  <a class="btn btn-success mx-3 my-2" id="login" aria-current="page" href="/login">Login</a>
+                </h5>
+              </div>
+              - ( or ) -
+              <div class="col-5">
+                <h5>
+                  Do you want to Register...?
+                  <a class="btn btn-success mx-3 my-2" id="register" aria-current="page" href="/register">Register</a>
+                </h5>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+{% endblock body %}

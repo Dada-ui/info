@@ -1,0 +1,34 @@
+{% extends 'cover.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+
+    <div class="card-img-overlay py-2">
+
+      <style>
+        div.relative {
+          position: relative;
+          left: 350px;
+          top: 100px;
+        }
+      </style>
+      <div class="relative col-sm-5 mx-5 py-5 mb-2">
+        <div class="container form-control text-center my-5">
+          <div class="container my-5">
+            <b><h2>Logged out..!</b></h2>
+            <br>
+            <h5>
+              <p><b>Thanks for spending some quality time in the website today</b></p>
+              Do you want login again...?
+              <a class="btn btn-success mx-3" id="login" aria-current="page" href="/login">LOGIN</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+{% endblock body %}
+
+

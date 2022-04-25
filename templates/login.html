@@ -1,0 +1,95 @@
+{% extends 'cover.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+
+    <div class="card-img-overlay py-2">
+
+      <style>
+        div.relative {
+          position: relative;
+          left: 350px;
+          top: 120px;
+        }
+        #username{
+          border-color: black;
+          border-top: hidden;
+          border-left: hidden;
+          border-right: hidden;
+        }
+        #email{
+          border-color: black;
+          border-top: hidden;
+          border-left: hidden;
+          border-right: hidden;
+        }
+        #password{
+          border-color: black;
+          border-top: hidden;
+          border-left: hidden;
+          border-right: hidden;
+        }
+      </style>
+
+      <div class="relative col-sm-5 mx-5 mb-2">
+
+        <div class="col-sm g-2 pt-3 form-control align-items-center">
+
+          <div class="container">
+            <h2 class="text-center" style="text-shadow: 0px 6px 5px black;">LOGIN</h2>
+          </div>
+
+          {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-center" role="alert">
+            <strong>{{ message }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          <form method="POST" action="/login">
+            {% csrf_token %}
+
+            <div class="row g-2">
+            <div class="col-sm g-3">
+              <div class="form-floating mb-1">
+                <input type="username" class="form-control" id="username" placeholder="Username"  name='username' required>
+                <label for="username">Username</label>
+              </div>
+            </div>
+
+            <div class="col-sm g-3">
+              <div class="form-floating mb-1">
+                <input type="password" class="form-control" id="password" placeholder="Password"  name='password' required>
+                <label for="password">Password</label>
+              </div>
+            </div>
+            </div>
+
+            <div class="row g-4">
+              <div class="text-center">
+                <div class="form-floating mt-4 mb-2" id="login">
+                  <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+          <div class="row text-center">
+            <div class="col mt-3 mb-2"><strong>Create a new account..!</strong>
+              <a class="btn btn-success mx-3" aria-current="page" href="/register">REGISTER</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+{% endblock body %}

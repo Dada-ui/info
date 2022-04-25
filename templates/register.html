@@ -1,0 +1,95 @@
+{% extends 'cover.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+
+    <div class="card-img-overlay py-2">
+
+      <style>
+        div.relative {
+          position: relative;
+          left: 380px;
+          top: 120px;
+        }
+        #username{
+          border-color: black;
+          border-top: hidden;
+          border-left: hidden;
+          border-right: hidden;
+        }
+        #email{
+          border-color: black;
+          border-top: hidden;
+          border-left: hidden;
+          border-right: hidden;
+        }
+        #password{
+          border-color: black;
+          border-top: hidden;
+          border-left: hidden;
+          border-right: hidden;
+        }
+      </style>
+
+      <div class="relative col-sm-4 mx-5">
+
+        <div class="col-sm g-2 form-control align-items-center">
+
+          <div class="container pb-2 my-2">
+            <h2 class="text-center" style="text-shadow: 0px 10px 5px black;"><b>REGISTER</b></h2>
+          </div>
+
+          <form method="POST" action="/register" class="post-form">
+            {% csrf_token %}
+
+            <div class="row g-2">
+              <div class="col-sm g-3">
+              <div class="form-floating mb-1">
+                <input type="username" class="form-control" id="username" placeholder="User Name"  name='username' required>
+                <label for="username">Username</label>
+              </div>
+              </div>
+            </div>
+                
+            <div class="row g-2">
+              <div class="col-sm g-3">
+              <div class="form-floating mb-1">
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email Address" name='email' required>
+                <label for="email">Email address</label>
+              </div>
+              </div>
+            </div>
+
+            <div class="row g-2">
+              <div class="col-sm g-3">
+              <div class="form-floating mb-1">
+                <input type="password" class="form-control" id="password" placeholder="Password" name='password' required>
+                <label for="password">Password</label>
+              </div>
+              </div>
+            </div>
+
+            <div class="row g-4">
+              <div class="text-center">
+              <div class="form-floating mt-3 mb-2" id="register">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+              </div>
+            </div>
+          
+          </form>
+
+          <div class="row">
+            <div class="col mt-3 mb-3"><b>Already have an account..?</b>
+              <a class="btn btn-success mx-3" id="login" aria-current="page" href="/login">LOGIN</a>
+            </div>
+          </div>
+
+        </div> 
+
+		  </div>
+
+    </div>
+
+{% endblock body %}
